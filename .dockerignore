@@ -1,0 +1,8 @@
+# Keep the image lean and secret-free.
+node_modules/
+dist/
+data/
+.env
+.git/
+.gitignore
+*.log

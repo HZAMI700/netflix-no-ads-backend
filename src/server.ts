@@ -28,6 +28,13 @@ export function buildApp(deps: AppDeps): FastifyInstance {
     activeStreams: registry.count(),
   }));
 
+  // Root route: some hosts probe `/` for liveness by default.
+  app.get('/', async () => ({
+    name: 'netflix-no-ads-backend',
+    status: 'ok',
+    health: '/health',
+  }));
+
   registerStreamRoutes(app, { config, engine, registry });
 
   app.setNotFoundHandler(async (req, reply) => reply.code(404).send({ error: 'Not found' }));

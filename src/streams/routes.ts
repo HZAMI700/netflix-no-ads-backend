@@ -75,7 +75,9 @@ export function registerStreamRoutes(app: FastifyInstance, deps: RouteDeps): voi
       const wanted =
         typeof fileIndex === 'number'
           ? handle.files.find((f) => f.index === fileIndex)
-          : handle.files.reduce((a, b) => (b.length > a.length ? b : a));
+          : handle.files.length > 0
+            ? handle.files.reduce((a, b) => (b.length > a.length ? b : a))
+            : undefined;
       if (!wanted) {
         await handle.destroy().catch(() => undefined);
         await removeDir(downloadPath);

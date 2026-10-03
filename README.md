@@ -51,7 +51,7 @@ npm run build && npm start
 | `TEMP_DIR` | `./data/torrents` | Where torrent data lands |
 | `FFMPEG_PATH` | _(bundled)_ | Override ffmpeg binary path |
 | `TRANSCODE_PRESET` | `veryfast` | x264 preset for non-native containers |
-| `METADATA_TIMEOUT_MS` | `90` | Seconds to wait for torrent metadata |
+| `METADATA_TIMEOUT_SECONDS` | `90` | Seconds to wait for torrent metadata |
 | `LOG_LEVEL` | `info` | pino level |
 
 ## Running with Docker

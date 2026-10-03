@@ -47,7 +47,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     tempDir: env['TEMP_DIR'] ?? './data/torrents',
     ffmpegPath: env['FFMPEG_PATH'] ?? '',
     transcodePreset: env['TRANSCODE_PRESET'] ?? 'veryfast',
-    metadataTimeoutMs: int('METADATA_TIMEOUT_MS', 90) * 1000,
+    metadataTimeoutMs: int('METADATA_TIMEOUT_SECONDS', 90) * 1000,
     logLevel: env['LOG_LEVEL'] ?? 'info',
   };
 }
