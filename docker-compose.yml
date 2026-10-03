@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    ports:
+      - "4000:4000"
+    env_file:
+      - .env
+    environment:
+      PORT: "4000"
+      TEMP_DIR: /data/torrents
+    volumes:
+      - torrent-data:/data/torrents
+    restart: unless-stopped
+
+volumes:
+  torrent-data:
